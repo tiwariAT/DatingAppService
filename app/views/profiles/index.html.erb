@@ -1,0 +1,26 @@
+<div class="background_image"></div>
+<%= form_tag(profiles_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search profiles country wise" %>
+
+  <%= submit_tag "Search" %>
+<% end %>
+
+<h1>All profiles</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Country</th>
+    <th>Photo</th>
+  </tr>
+ 
+  <% @profile.each do |profile| %>
+    <tr>
+      <td><%= profile.state %></td>
+      <td><%= profile.address %></td>
+      <td><%= profile.country %></td>
+      <td><%= image_tag profile.avatar.url, :size => "120x120" %>
+    </tr>
+  <% end %>
+</table>
