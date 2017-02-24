@@ -24,7 +24,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'bootstrap-sass', '3.3.6'
 gem "paperclip", "~> 5.0.0"
-gem 'mysql2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -36,8 +35,13 @@ gem 'mysql2'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'mysql2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development do
